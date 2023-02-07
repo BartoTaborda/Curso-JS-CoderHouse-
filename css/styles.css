@@ -1,0 +1,162 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-sizing: border-box;
+  -moz-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-family: 'Playfair Display';
+  color: #050f23;
+}
+.container {
+  margin: 0 auto;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: #050f23;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #377;
+}
+.containerTabs {
+  padding: 4.5rem 0;
+}
+.containerTabs .containerEncabezado {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.containerTabs .containerEncabezado .encabezado {
+  font-weight: 600;
+  font-family: 'Poppins';
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.containerTabs .containerEncabezado .encabezado li a {
+  font-size: 1rem;
+  padding: 0 1.5rem 1rem 1.5rem;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+.containerTabs .containerEncabezado .encabezado li a:hover {
+  color: #377;
+}
+.containerTabs .containerEncabezado .encabezado li.active a {
+  color: #050f23;
+  border-bottom: 2px solid #dcd8d8;
+}
+.containerTabs .contenido {
+  font-size: 1.25rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  border: 6px double #dcd8d8;
+  padding: 0 2.25rem;
+  font-family: 'Playfair Display';
+}
+.containerTabs .contenido div {
+  display: none;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.containerTabs .contenido .active {
+  display: block;
+}
+.cotizador {
+  padding: 1.5rem 0;
+  font-weight: 600;
+  font-family: 'Poppins';
+  background-color: aliceblue;
+}
+.cotizador .tituloCotizador {
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+}
+.cotizador .containerCarrito {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  background-color: beige;
+}
+.cotizador .containerCarrito .contentCarrito {
+  font-size: 1.25rem;
+}
+.cotizador .containerCarrito .botonCarrito {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.cotizador .containerCarrito .ContainerItemsCarrito {
+  font-size: 1rem;
+  width: 70%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.cotizador .contenidoCotizador {
+  font-weight: 600;
+  font-family: 'Poppins';
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.cotizador .contenidoCotizador .productoCotizador {
+  font-size: 1rem;
+  margin: 1rem;
+}
+.cotizador .contenidoCotizador .botonAgregarAlCarrito {
+  margin: 1rem;
+}
+footer {
+  margin-top: 2.25rem;
+  background: #141618;
+  padding: 1rem 0;
+  text-align: center;
+  color: #fff;
+  max-height: fit-content;
+}
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+.float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: #fff;
+}
+.my-float {
+  margin-top: 9px;
+  margin-left: 2px;
+}

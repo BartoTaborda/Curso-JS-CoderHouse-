@@ -4,42 +4,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuCarpet</title>
+    <title>AU Carpet</title>
+
+    <!--  ----links de estilos----  -->
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/ab04a0b8aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!--  ---------- Barra de navegacion ----------  -->
     <header>
-        <nav class="barradenavegacion">
-            <div class="cajabarradenav"><a href="index.html">Inicio</a></div>
-            <div class="cajabarradenav"><a href="#">Precios</a></div>
-            <div class="cajabarradenav"><a href="#">Ofertas</a></div>
-            <div class="cajabarradenav"><a href="#">Cotizador</a></div>
-            <div class="cajabarradenav"><a href="#">Contacto</a></div>
-          </nav>
+        <div class="logo">
+            <img src="img/CarpetRollOut.gif" alt="logo">
+        </div>
+        <nav class="barraDeNavegacion">
+            <div class="cajaBarraDeNav"><a href="index.html">Home</a></div>
+            <div class="cajaBarraDeNav"><a href="#Servicios">Servicios</a></div>
+            <div class="cajaBarraDeNav"><a href="#Cotizador">Cotizador</a></div>
+            <div class="cajaBarraDeNav"><a href="#Outlet">Outlet</a></div>
+            <div class="cajaBarraDeNav"><a href="#Contacto">Contacto</a></div>
+        </nav>
+        <div id="colorScheme">
+            <div class="darkMode on"><i class="fa-sharp fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></div>
+        </div>
     </header>
 
-    <section>
-        <h1>Bienvenido al cotizador de AuCarpet</h1>
-    
-        <p>Antes de iniciar el cotizador recuerde tener consigo la cantidad de metros cuadrados que necesita y el tipo de alfombra que mejor se adecua a su necesidad.</p>
-        
-        <section>
-            <h3>Diferentes tipos de pisos para tu evento.</h3>
+    <section class="main">
+        <h1>Bienvenido a AU Carpet</h1>
 
-            <h4>Event Carpets</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil pariatur enim quibusdam quaerat aliquam, quo et, fugiat corrupti in tempore placeat cum perferendis ad ipsa iure fuga dolorem libero dolorum.</p>
+        <!--  ---------- Portada ----------  
+        <section class="productos">
+            <div class="container">
+                <div class="producto prod1">
+                    <img src="img/red-carpet.jpg" alt="Carpet hire">
+                </div>
+                <div class="producto prod2">
+                    <img src="img/artificial-turf.jpg" alt="Artificial Turf">
+                </div>
+                <div class="producto prod3">
+                    <img src="img/bollards.jpg" alt="Bollards & Ropes hire">
+                </div>
+                <div class="producto prod4">
+                    <img src="img/media-wall.jpg" alt="Media Wall hire">
+                </div>
+            </div>
+        </section>-->
+
+        <!--  ----------Lista de precios----------  -->
+        <section class="listaDePrecios" id="Servicios">
+            <div class="titulo-container">
+                <p class="titulo">Servicios</p>
+            </div>
             
-            <h4>Plush Carpets</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil pariatur enim quibusdam quaerat aliquam, quo et, fugiat corrupti in tempore placeat cum perferendis ad ipsa iure fuga dolorem libero dolorum.</p>
+            <div class="containerTabs">
+                <div class="containerEncabezado">
+                    <ul class="encabezado" id="encabezado">
+                        <li>
+                            <a href="#pisos">Tipos de pisos</a>
+                        </li>
+                        <li>
+                            <a href="#extras">Extras</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contenido" id="contenido">
+                    <div class="pisos" id="pisos">
+                        <ul class="active">
+                            <li>Velour Carpet (m2) <b> $25 </b></li>
+                            <li>Plush Carpet (m2) <b> $35 </b></li>
+                            <li>Artificial Turf (m2) <b> $35 </b></li>
+                            <li>Dance Floor (m2) <b> $40 </b></li>
+                        </ul>
+                    </div>
+                    <div class="extras" id="extras">
+                        <ul class="">
+                            <li>Bollards (w/Ropes) <b> $10 </b></li>
+                            <li>A4 Sign Holders <b> $12 </b></li>
+                            <li>A3 Sign Holders <b> $12 </b></li>
+                            <li>Media Wall (m2) <b> $50 </b></li>
+                        </ul>
+                    </div>
+                </div>
             
-            <h4>Dance Floors</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil pariatur enim quibusdam quaerat aliquam, quo et, fugiat corrupti in tempore placeat cum perferendis ad ipsa iure fuga dolorem libero dolorum.</p>
-        
-        
+            </div>
+        </section>  
+            
+        <!--  ---------- Cotizador ----------  -->
+        <section class="cotizador" id="cotizador">
+            <h3 class="tituloCotizador">Cotice su evento</h3>
+            <h3 class="botonCarrito" id="botonCarrito">
+                🛒 <span id="cantidadCarrito" class="cantidadCarrito"></span>
+            </h3>
+            <div class="containerCarrito" id="containerCarrito"></div>
+            <div id="contenidoCotizador" class="contenidoCotizador"></div>
         </section>
-        
+
+        <!--  ---------- Productos Outlet ----------  
+        <section class="outlet" id="Outlet">
+            <h3>Productos en venta</h3>
+        </section>-->
+
+        <!--  ---------- Contacto ----------  -->
+        <section class="contacto" id="Contacto">
+            <h3>Contacto</h3>
+        </section>
+
+        <!--  ---------- Footer ----------  -->
+        <footer>
+            <p class="copyright">© Todos los derechos reservados</p>
+        </footer>
     </section>
 
     <!--  ----------Botón wtsp----------  -->
@@ -50,6 +124,6 @@
         </a>
     </div>
 
-    <script src="js/preEntrega2.js"></script>
+    <script src="js/preEntrega3.js"></script>
 </body>
 </html>

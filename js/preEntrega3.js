@@ -183,12 +183,6 @@ const armarCarrito = () => {
             eliminarItem(product.id);
         })
 
-        // let eliminar = document.createElement("span");
-        // eliminar.innerText = "✖";
-        // eliminar.className = "botonEliminarItemCarrito";
-        // containerItemsCarrito.append(eliminar);
-
-        // eliminar.addEventListener("click", eliminarItem);
     });
 
     const totalCarrito = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);

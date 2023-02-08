@@ -156,7 +156,7 @@ const armarCarrito = () => {
     containerCarrito.append(contentCarrito);
 
     const exitCarrito = document.createElement("p");
-    exitCarrito.innerText= "X";
+    exitCarrito.innerText= "❎";
     exitCarrito.className = "botonExitCarrito";
     exitCarrito.addEventListener("click", () => {
         containerCarrito.style.display = "none";
@@ -172,16 +172,23 @@ const armarCarrito = () => {
             <p>$${product.precio}</p>
             <p>${product.cantidad}</p>
             <p>Subtotal: ${product.cantidad * product.precio}</p>
+            <span class="botonEliminarItemCarrito"> ❌ </span>
         `;
 
         containerCarrito.append(containerItemsCarrito);
 
-        let eliminar = document.createElement("span");
-        eliminar.innerText = "✖";
-        eliminar.className = "botonEliminarItemCarrito";
-        containerItemsCarrito.append(eliminar);
 
-        eliminar.addEventListener("click", eliminarItem);
+        let eliminar = containerItemsCarrito.querySelector(".botonEliminarItemCarrito");
+        eliminar.addEventListener("click", () => {
+            eliminarItem(product.id);
+        })
+
+        // let eliminar = document.createElement("span");
+        // eliminar.innerText = "✖";
+        // eliminar.className = "botonEliminarItemCarrito";
+        // containerItemsCarrito.append(eliminar);
+
+        // eliminar.addEventListener("click", eliminarItem);
     });
 
     const totalCarrito = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
@@ -197,8 +204,8 @@ const armarCarrito = () => {
 
 botonCarrito.addEventListener("click", armarCarrito);
 
-const eliminarItem = () => {
-    const foundItem = carrito.find((element) => element.nombre);
+const eliminarItem = (id) => {
+    const foundItem = carrito.find((element) => element.id === id);
     carrito = carrito.filter((nuevoCarrito) => {
         return nuevoCarrito !== foundItem;
     })

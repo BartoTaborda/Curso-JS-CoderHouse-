@@ -4,7 +4,7 @@
 @negro-custom: #141618;
 @blanco: #fff;
 @texto-oscuro: #050f23;
-@texto-claro: #377;
+@texto-claro: rgb(39, 18, 104);
 @gris-claro: #dcd8d8;
 @negro-slider: #141618;
 
@@ -49,6 +49,70 @@ a{
     }
 }
 
+// ---------------------- HEADER ----------------------
+
+header{
+    display: flex;
+
+    .barraDeNavegacion{
+        .logo{
+            max-width: 4.5rem;
+        }
+
+        .darkMode{
+            display: flex;
+            min-width: 3rem;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        background: @blanco;
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        padding: 0 2.25rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 4.5rem;
+        border-bottom: 1px solid @gris-claro;
+
+        .menu{
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+            TEXT-DECORATION: underline;
+            font-size: 1.15rem;
+            text-underline-position: under;
+            -webkit-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+
+            :hover{
+                font-size: 1.4rem;
+                text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+};
+
+// ---------------------- MAIN ----------------------
+.main{
+    margin-top: 4.5rem;
+
+    .containerTitulo{
+        padding: 0.75rem;
+
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            font-style: italic;
+        }
+    }
+}
 // ---------------------- PORTADA ----------------------
 .slider{
     width: 100%;
@@ -132,9 +196,7 @@ a{
     }
 }
 
-
 // ---------------------- TABS LISTA DE PRECIOS ----------------------
-
 .containerTabs{
     padding: 3.5rem 0;
 
@@ -200,12 +262,10 @@ a{
 }
 
 // ---------------------- COTIZADOR ----------------------
-
 .cotizador{
     padding: 1.5rem 0;
     font-weight: 600;
     font-family: @fuente-secundaria;
-    background-color: aliceblue;
 
     .tituloCotizador{
         text-align: center;
@@ -218,15 +278,34 @@ a{
         align-items: center;
         flex-direction: column;
         width: 50%;
-        margin: auto;
-        background-color: beige;
+        margin: 1rem auto 0rem;
+        background-color: rgba(221, 220, 220, 0.212);
+        box-shadow: 17px 20px 13px -1px rgba(0,0,0,0.35);
 
         .contentCarrito{
             font-size: 1.25rem;
+            text-decoration:underline;
+            margin-top: 1rem;
+        }
+        .botonExitCarrito{
+            cursor: pointer;
+            text-align: end;
+            width: 85%;
         }
         .botonCarrito{
             font-weight: 600;
             font-size: 1.5rem;
+        }
+        .totalDelCarrito{
+            display: flex;
+            justify-content: flex-end;
+            width: 80%;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            h3{
+                padding: 0 3px;
+            }
         }
         .ContainerItemsCarrito{
             font-size: 1rem;
@@ -235,6 +314,24 @@ a{
             flex-wrap: nowrap;
             justify-content: space-between;
             margin: 1rem 0;
+
+            .sumar{
+                cursor: pointer;
+            }
+            .restar{
+                cursor: pointer;
+            }
+            .botonEliminarItemCarrito{
+                cursor: pointer;
+            }
+            .containerCantidadCarrito{
+                display: flex;
+                box-shadow: 0 7px 7px rgba(0, 0, 0, 0.20);
+                justify-content: space-evenly;
+                width: 5rem;
+                border-radius: 35px;
+                font-size: 1.2rem;
+            }
         }
     }
 
@@ -247,25 +344,188 @@ a{
         margin: auto;
         justify-content: center;
         align-items: center;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
 
         .productoCotizador{
             font-size: 1rem;
             margin: 1rem;
+            font-size: 1.2rem;
+            display: block;
+            border-left: solid 3px black;
+            padding-left: 0.5rem;
         }
         .botonAgregarAlCarrito{
-            margin: 1rem;   
+            margin: 1rem;  
+            font-size: 1rem;
+            border: none;
+            padding: 0.3rem;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px -1px #f7e93c; 
+            cursor: pointer;
+            
+        }
+        .inputCantidad{
+            width: 4rem;
+            text-align: end;
+            font-size: 1.1rem;
+            border: dashed 2px;
+            border-radius: 6px;
         }
     }
 
 }        
-// ---------------------- PRODUCTOS OUTLET ----------------------
 
 // ---------------------- CONTACTO ----------------------
+.contacto{
+
+    .datos{
+        padding: 5.625rem 0 11.875rem 0;
+        position: relative;
+        background-image: url(../img/oficina.jpg);
+        background-size: cover;
+        // background-position: center;
+        background-repeat: no-repeat;
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: fade(@negro-custom, 30%);
+            top: 0;
+            z-index: 1;
+        }
+        
+        .container{
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .blurb{
+                background: @blanco;
+                border: 6px double @gris-claro;
+                padding: 2.25rem;
+                text-align: center;
+                width: 25%;
+
+                h3{
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    line-height: 2.5rem;
+                    margin-bottom: 1.1rem;
+                    border-bottom: 1px solid @gris-claro;
+                }
+                p{
+                    font-size: 1rem;
+                    color: #777;
+                }
+            }
+        }
+    }
+
+    .formulario{
+        position: relative;
+        z-index: 3;
+        background: @blanco;
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2.25rem;
+        margin-top: -6.25rem;
+        width: 90%;
+
+        .formulario-contacto{
+            .input-group{
+                position: relative;
+                margin-bottom: 2rem;
+
+                input[type="text"],
+                input[type="email"],
+                textarea{
+                    font-family: @fuente-secundaria;
+                    font-size: 1rem;
+                    color: @texto-oscuro;
+                    width: 100%;
+                    outline: none;
+                    padding: 0.9375rem 0;
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid fade(#9aa248, 35%);
+                    vertical-align: top;
+
+                    &:focus{
+                        border-bottom: 2px solid #9aa248;
+                    }
+                }
+
+                textarea{
+                    max-width: 100%;
+                    max-height: 10.25rem;
+                    min-height: 5.125rem;
+                    min-width: 100%;
+                }
+
+                label{
+                    color: @texto-claro;
+                    font-family: @fuente-secundaria;
+
+                    &.label{
+                        position: absolute;
+                        top: 1rem;
+                        left: 0;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                        margin-left: 1rem;
+                        -webkit-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                        transition: all .3s ease;
+
+                        &.active{
+                            top: -0.75rem;
+                            margin-left: 0;
+                            font-size: 0.75rem;
+                            line-height: 0.75rem;
+                            color: @texto-claro;
+                        }
+                    }
+                }
+
+                .error{
+                    position: absolute;
+                    color: rgb(255, 59, 59);
+                    font-family: @fuente-secundaria;
+                    font-size: 0.875rem;
+                }
+            }
+
+            input[type="submit"]{
+                font-family: @fuente-secundaria;
+                color: @blanco;
+                background: #9aa248;
+                border-radius: 1px;
+                border: 2px solid @blanco;
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                margin-top: 3rem;
+                padding: 1rem;
+                width: 20%;
+                outline: none;
+                -webkit-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                transition: all .3s ease;
+
+                &:hover{
+                    background: darken(#9aa248, 10%);
+                }
+            }
+        }
+    }
+}
 
 // ---------------------- FOOTER ----------------------
-
 footer{
-    margin-top: 2.25rem;
     background: @negro-custom;
     padding: 1rem 0;
     text-align: center;
@@ -274,7 +534,6 @@ footer{
 }
 
 // ---------------------- BOTON WTSP ----------------------
-
 .float{
 	position:fixed;
 	width:60px;

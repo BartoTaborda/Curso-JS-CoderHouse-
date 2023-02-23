@@ -1,0 +1,50 @@
+[
+    {   
+        "id":1,
+        "nombre": "Velour Carpet",
+        "precio": 25,
+        "cantidad": 1
+    },
+    {
+        "id":2,
+        "nombre": "Plush Carpet",
+        "precio": 35,
+        "cantidad": 1
+    },
+    {
+        "id":3,
+        "nombre": "Artificial Turf",
+        "precio": 35,
+        "cantidad": 1
+    },
+    {
+        "id":4,
+        "nombre": "Dance Floor",
+        "precio": 40,
+        "cantidad": 1
+    },
+    {
+        "id":5,
+        "nombre": "Bollards",
+        "precio": 10,
+        "cantidad": 1
+    },
+    {
+        "id":6,
+        "nombre": "A4 Sign Holders",
+        "precio": 12,
+        "cantidad": 1
+    },
+    {
+        "id":7,
+        "nombre": "A3 Sign Holders",
+        "precio": 12,
+        "cantidad": 1
+    },
+    {
+        "id":8,
+        "nombre": "Media Wall",
+        "precio": 50,
+        "cantidad": 1
+    }
+]

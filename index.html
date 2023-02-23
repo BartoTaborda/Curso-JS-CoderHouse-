@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AU Carpet</title>
 
+    <!--  ----libreria de animaciones----  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--  ----links de estilos----  -->
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/ab04a0b8aa.js" crossorigin="anonymous"></script>
@@ -14,26 +16,35 @@
 
     <!--  ---------- Barra de navegacion ----------  -->
     <header>
-        <div class="logo">
-            <img src="img/CarpetRollOut.gif" alt="logo">
-        </div>
+        
         <nav class="barraDeNavegacion">
-            <div class="cajaBarraDeNav"><a href="index.html">Home</a></div>
-            <div class="cajaBarraDeNav"><a href="#Servicios">Servicios</a></div>
-            <div class="cajaBarraDeNav"><a href="#Cotizador">Cotizador</a></div>
-            <div class="cajaBarraDeNav"><a href="#Outlet">Outlet</a></div>
-            <div class="cajaBarraDeNav"><a href="#Contacto">Contacto</a></div>
+            <div class="logo">
+                <img src="img/CarpetRollOut.gif" alt="logo">
+            </div>
+            <div class="menu">
+                <div class="cajaBarraDeNav"><a href="index.html">Home</a></div>
+                <div class="cajaBarraDeNav"><a href="#servicios">Servicios</a></div>
+                <div class="cajaBarraDeNav"><a href="#cotizador">Cotizador</a></div>
+                <div class="cajaBarraDeNav"><a href="#contacto">Contacto</a></div>
+            </div>
+            <div id="colorScheme" class="darkMode">
+                <!-- <div class="lightMode on"></i><i class="fa-solid fa-sun"></i></div> -->
+                <!-- <div class="darkMode on"><i class="fa-sharp fa-solid fa-moon"></i></div> -->
+                <h3 class="botonCarrito" id="botonCarrito">
+                    🛒 <span id="cantidadCarrito" class="cantidadCarrito" href="#cotizador"></span>
+                </h3>
+            </div>
         </nav>
-        <div id="colorScheme">
-            <div class="darkMode on"><i class="fa-sharp fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></div>
-        </div>
+        
     </header>
     <section class="main">
-        <h1>Bienvenido a AU Carpet</h1>
+        <div class="containerTitulo">            
+            <h1  data-aos="zoom-in" class="tituloPortada">Bienvenido a AU Carpet</h1>
+        </div>
 
         <!--  ---------- Portada ----------  -->
         <section class="slider">
-            <div class="containerSlider">
+            <div class="containerSlider"  data-aos="fade-right">
                 <div class="window">
                     <div class="photos" id="photoSlider">
                         <div class="producto prod1">
@@ -54,7 +65,7 @@
         </section>
 
         <!--  ----------Lista de precios----------  -->
-        <section class="listaDePrecios" id="Servicios">
+        <section class="listaDePrecios" id="servicios" data-aos="fade-left">
             
             <div class="containerTabs">
                 <div class="containerEncabezado">
@@ -91,23 +102,53 @@
         </section>  
             
         <!--  ---------- Cotizador ----------  -->
-        <section class="cotizador" id="cotizador">
+        <section class="cotizador" id="cotizador"  data-aos="fade-right">
             <h3 class="tituloCotizador">Cotice su evento</h3>
-            <h3 class="botonCarrito" id="botonCarrito">
+            <!-- <h3 class="botonCarrito" id="botonCarrito">
                 🛒 <span id="cantidadCarrito" class="cantidadCarrito"></span>
-            </h3>
+            </h3> -->
             <div class="containerCarrito" id="containerCarrito"></div>
             <div id="contenidoCotizador" class="contenidoCotizador"></div>
         </section>
 
-        <!--  ---------- Productos Outlet ----------  
-        <section class="outlet" id="Outlet">
-            <h3>Productos en venta</h3>
-        </section>-->
-
         <!--  ---------- Contacto ----------  -->
-        <section class="contacto" id="Contacto">
-            <h3>Contacto</h3>
+        <section class="contacto" id="contacto">
+            <div class="datos parallax">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="blurb">
+                        <h3>Escríbenos</h3>
+                        <p>contacto-aucarpet@gmail.com</p>
+                    </div>
+                    <div class="blurb">
+                        <h3>Visítanos</h3>
+                        <p>Calle 213 <br>Sydney, AU</p>
+                    </div>
+                    <div class="blurb">
+                        <h3>Horarios</h3>
+                        <p>Lunes a Viernes <br>9am - 5pm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="formulario">
+                <form action="" class="formulario-contacto" name="formulario-contacto" id="formulario_contacto">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" id="nombre" name="nombre">
+                            <label for="nombre" class="label">Nombre</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email">
+                            <label for="email" class="label">Correo electrónico</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea name="mensaje" id="mensaje"></textarea>
+                            <label for="mensaje" class="label">Mensaje</label>
+                        </div>
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
         </section>
 
         <!--  ---------- Footer ----------  -->
@@ -124,8 +165,14 @@
         </a>
     </div>
 
+    <script src="js/parallax.js"></script>
+    <script src="js/formulario.js"></script>
     <script src="js/carrito.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/tabs.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
